@@ -6,6 +6,7 @@ class CurrencyCard extends StatelessWidget {
   final bool isInverted;
 
   final _blackColor = const Color(0xFF1F2123);
+  // _는 private하게 쓰겠다..
 
   const CurrencyCard(
       {super.key,
@@ -18,7 +19,7 @@ class CurrencyCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      clipBehavior: Clip.hardEdge,
+      clipBehavior: Clip.hardEdge, // overflow:hidden
       decoration: BoxDecoration(
         color: isInverted ? Colors.white : _blackColor,
         borderRadius: BorderRadius.circular(25),
@@ -68,9 +69,9 @@ class CurrencyCard extends StatelessWidget {
               ],
             ),
             Transform.scale(
-              scale: 2.2,
+              scale: 2.2, //아이콘의 크기, 부모의 크기에 영향 없음
               child: Transform.translate(
-                offset: const Offset(-5, 12),
+                offset: const Offset(-5, 12), //display:absolute(x,y)랑 비슷
                 child: Icon(
                   icon,
                   color: isInverted ? _blackColor : Colors.white,
